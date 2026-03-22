@@ -1,6 +1,6 @@
 ---
 name: reading-paper-arxiv
-description: 读取单篇 arXiv 论文，提取原图，生成图文并茂的快速概览笔记，保存到当前目录
+description: 读取单篇 arXiv 论文（需提供 arXiv 链接或 ID），提取原图，生成图文并茂的快速概览笔记，保存到当前目录。不处理本地 PDF 文件。
 allowed-tools: Read, Write, Bash
 ---
 
@@ -149,3 +149,6 @@ url: "{arxiv链接}"
 - 保存位置：**当前工作目录**，使用 `paper_meta.json` 中的 `folder_name`
 - 关键词用 `[[wikilink]]`：模型名、方法名、核心概念
 - 图片全部引用，图文结合是本 skill 的核心价值
+- **输入限制**：仅接受 arXiv URL（`arxiv.org/abs/...` 或 `arxiv.org/pdf/...`）或纯 arXiv ID（如 `2506.12345`）。若用户提供本地 PDF 路径，拒绝处理并提示用户提供 arXiv 链接
+- **依赖限制**：脚本仅使用 Python 标准库，不得执行 `pip install` 安装任何第三方包
+- **图片提取失败时**：若 `images/` 为空（源码包不含图片或下载失败），在笔记的"图片解读"章节中说明原因（如"该论文未提供 LaTeX 源码，无法提取原始图片"），不得跳过该章节或留空
