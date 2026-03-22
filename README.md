@@ -34,6 +34,7 @@
 
 - [Claude Code](https://claude.ai/claude-code) CLI 已安装并登录
 - Python 3.8+（仅用标准库，无需额外依赖）
+- 提前创建好一个obsidian空白仓库
 
 ### 安装步骤
 
@@ -69,7 +70,7 @@ Copy-Item -Recurse reading-paper-arxiv "$env:USERPROFILE\.claude\skills\"
 /reading-paper-arxiv 2506.12345
 ```
 
-笔记保存在**当前工作目录**，切换到你的论文库目录再调用，笔记就直接落在那里。
+笔记保存在**当前工作目录**，切换到你预先创建好的 obsidian 论文库目录再调用，笔记就直接落在那里。
 
 ---
 
